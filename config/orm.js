@@ -31,19 +31,21 @@ const orm = {
         });
     },
     insertOne: function(table, cols, vals, cb){
-        var queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES(${printQuestionMarks(vals.length)})`;
+        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES(${printQuestionMarks(vals.length)})`;
         console.log(queryString);
     
         connection.query(queryString, vals, function(err, result) {
-            if (err) {
-            throw err;
-            }
-    
+            if (err) throw err;    
             cb(result);
         });
     },
-    updateOne: function(){
-
+    updateOne: function(table, objColVals, condition, cb){
+        let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+          if (err) throw err;    
+          cb(result);
+        });
     }
 };
 
