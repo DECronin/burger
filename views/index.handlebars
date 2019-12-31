@@ -1,33 +1,35 @@
 <img src="../assets/img/hamburger-3184108_960_720.png" id="logo-burger" alt="TastyBurgerImage">
 <h1>Eat-Da-Burger!</h1>
 
-<ul id="active">
-    <h3>Available:</h3>
-  {{#each burgers}}
-    <span class="item">
-        {{#unless devoured}}
-        <p>
-            {{id}}. {{burger_name}}
-            <button class="consume" data-id="{{id}}">Devour It!</button>
-        </p>
-        {{/unless}}
-    </span>
-  {{/each}}
-</ul>
+<span class="container">
+    <ul id="active">
+        <h3>Available:</h3>
+        {{#each burgers}}
+            <span class="item">
+                {{#unless devoured}}
+                <p>
+                    {{id}}. {{burger_name}}
+                    <button class="consume" data-id="{{id}}">Devour It!</button>
+                </p>
+                {{/unless}}
+            </span>
+        {{/each}}
+    </ul>
 
-<ul id="eaten">
-    <h3>Consumed:</h3>
-  {{#each burgers}}
-    <span class="item">
-        {{#if devoured}}
-        <p>{{id}}. {{burger_name}}</p>
-        {{/if}}
-    </span>
-  {{/each}}
-</ul>
+    <ul id="eaten">
+        <h3>Consumed:</h3>
+        {{#each burgers}}
+            <span class="item">
+                {{#if devoured}}
+                <p>{{id}}. {{burger_name}}</p>
+                {{/if}}
+            </span>
+        {{/each}}
+    </ul>
+</span>
 
 <form class="creation-form" action="/api/burgers" method="post">    
-    <textarea name="name" id="name" cols="30" rows="10"></textarea>
+    <textarea name="name" id="name"></textarea>
     <button type="submit" id="submit">Submit</button>
     <p>Enter A Burger You'd Like to Eat & Click "Submit"</p>
 </form>
