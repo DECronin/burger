@@ -1,19 +1,26 @@
-<img src="../public/assets/img/alt" alt="TastyBurgerImage">
+<img src="../public/assets/img/burger.jfif" alt="TastyBurgerImage">
 <h1>Eat-Da-Burger!</h1>
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
+    <span class="item">
+        {{#unless devoured}}
+        <p>
+            {{id}}. {{burger_name}}
+            <button class="consume" data-id="{{id}}">Devour It!</button>
+        </p>
+        {{/unless}}
+    </span>
   {{/each}}
 </ul>
 
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
+    <span class="item">
+        {{#if devoured}}
+        <p>{{id}}. {{burger_name}}</p>
+        {{/if}}
+    </span>
   {{/each}}
 </ul>
 
