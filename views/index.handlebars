@@ -1,8 +1,6 @@
 <img src="../public/assets/img/alt" alt="TastyBurgerImage">
 <h1>Eat-Da-Burger!</h1>
 
-{{!-- loop through burgers database:
-(id. name) (Devour It button changes eaten status) --}}
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
@@ -18,9 +16,6 @@
     {{/if}}
   {{/each}}
 </ul>
-
-
-{{!-- loop to display status "eaten" --}}
 
 <form class="creation-form">    
     <textarea name="name" id="name" cols="30" rows="10"></textarea>
