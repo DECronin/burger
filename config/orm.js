@@ -8,7 +8,7 @@ const orm = {
         });
     },
     insertOne: function(table, cols, value, cb){
-        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES('${value.toString()}')`;
+        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES("${value.toString()}")`;
         console.log(queryString);
         connection.query(queryString, value, function(err, result) {
             if (err) throw err;    
