@@ -1,3 +1,24 @@
+body{
+    width: 98vw;
+    text-align: center;
+    background-color: orange;
+}
 #logo-burger{
     width: 100px;
+}
+#active,
+#eaten{
+    background-color: rgba(248, 215, 144, 0.2);
+    float: left;
+    width: 45vw;
+    color: navy;
+    padding: 10px;
+    margin: 16px;
+}
+form{
+    margin: 2.5vw;
+    padding: 10px;
+    float: left;
+    width: 90vw;
+    height: 20vh;
 }
