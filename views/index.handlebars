@@ -1,7 +1,7 @@
 <img src="../assets/img/hamburger-3184108_960_720.png" id="logo-burger" alt="TastyBurgerImage">
 <h1>Eat-Da-Burger!</h1>
 
-<ul>
+<ul id="active">
     <h3>Available:</h3>
   {{#each burgers}}
     <span class="item">
@@ -15,7 +15,7 @@
   {{/each}}
 </ul>
 
-<ul>
+<ul id="eaten">
     <h3>Consumed:</h3>
   {{#each burgers}}
     <span class="item">
