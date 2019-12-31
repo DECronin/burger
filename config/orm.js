@@ -1,13 +1,4 @@
 const connection = require("../config/connection.js");
-
-function printQuestionMarks(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
-      arr.push("?");
-    }
-    return arr.toString();
-}
-
 const orm = {
     selectAll: function(tableInput, cb){
         let queryString = "SELECT * FROM " + tableInput + ";";
@@ -16,11 +7,10 @@ const orm = {
           cb(result);
         });
     },
-    insertOne: function(table, cols, vals, cb){
-        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES(${printQuestionMarks(vals.length)})`;
+    insertOne: function(table, cols, value, cb){
+        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES('${value.toString()}')`;
         console.log(queryString);
-    
-        connection.query(queryString, vals, function(err, result) {
+        connection.query(queryString, value, function(err, result) {
             if (err) throw err;    
             cb(result);
         });
