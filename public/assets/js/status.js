@@ -9,5 +9,5 @@ $(document).ready(() => {
         }).then(() => {
             location.reload();
         });
-    }
+    })
 });
