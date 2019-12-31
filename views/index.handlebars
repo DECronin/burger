@@ -2,6 +2,7 @@
 <h1>Eat-Da-Burger!</h1>
 
 <ul>
+    <h3>Available:</h3>
   {{#each burgers}}
     <span class="item">
         {{#unless devoured}}
@@ -15,6 +16,7 @@
 </ul>
 
 <ul>
+    <h3>Consumed:</h3>
   {{#each burgers}}
     <span class="item">
         {{#if devoured}}
@@ -29,3 +31,5 @@
     <button type="submit">Submit</button>
     <p>Enter A Burger You'd Like to Eat & Click "Submit"</p>
 </form>
+
+<button id="reset-all">Reset All Burger Statuses to Available</button>
