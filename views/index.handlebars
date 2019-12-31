@@ -3,6 +3,22 @@
 
 {{!-- loop through burgers database:
 (id. name) (Devour It button changes eaten status) --}}
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
 
 {{!-- loop to display status "eaten" --}}
 
